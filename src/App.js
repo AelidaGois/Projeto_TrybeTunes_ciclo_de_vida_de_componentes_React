@@ -9,12 +9,51 @@ import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
 class App extends Component {
+  state = {
+    disable: true,
+    name: '',
+  };
+
+  isValidedButton = () => {
+    const { name } = this.state;
+    const NUMBER = 2;
+    if (name.length >= NUMBER) {
+      console.log('Maior que 2');
+      this.setState({
+        disable: false,
+      });
+    } else {
+      console.log('sou true');
+      this.setState({
+        disable: true,
+      });
+    }
+  };
+
+  handleOnChange = ({ target }) => {
+    const { value, name } = target;
+    this.setState({
+      [name]: value,
+    });
+    this.isValidedButton();
+  };
+
   render() {
+    const { disable, name } = this.state;
     return (
       <>
         <p>TrybeTunes</p>
         <Switch>
-          <Route path="/" exact><Login /></Route>
+          <Route
+            path="/"
+            exact
+            render={ (props) => (<Login
+              { ...props }
+              disable={ disable }
+              handleOnChange={ this.handleOnChange }
+              nameInput={ name }
+            />) }
+          />
           <Route path="/search"><Search /></Route>
           <Route path="/album/:id"><Album /></Route>
           <Route path="/favorites"><Favorites /></Route>
