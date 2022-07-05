@@ -42,7 +42,7 @@ class App extends Component {
     const { disable, name } = this.state;
     return (
       <>
-        <p>TrybeTunes</p>
+        <h1>TrybeTunes</h1>
         <Switch>
           <Route
             path="/"
