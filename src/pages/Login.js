@@ -14,7 +14,6 @@ class Login extends Component {
     });
     const { history, nameInput } = this.props;
     await createUser({ name: nameInput });
-    console.log(nameInput);
     history.push('/search');
   };
 
