@@ -54,12 +54,12 @@ class App extends Component {
               nameInput={ name }
             />) }
           />
-          <Route path="/search"><Search /></Route>
-          <Route path="/album/:id"><Album /></Route>
-          <Route path="/favorites"><Favorites /></Route>
-          <Route path="/profile" exact><Profile /></Route>
-          <Route path="/profile/edit"><ProfileEdit /></Route>
-          <Route path="*"><NotFound /></Route>
+          <Route path="/search" component={ Search } />
+          <Route path="/album/:id" component={ Album } />
+          <Route path="/favorites" component={ Favorites } />
+          <Route path="/profile" exact component={ Profile } />
+          <Route path="/profile/edit" component={ ProfileEdit } />
+          <Route path="*" component={ NotFound } />
         </Switch>
       </>
 
