@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import MusicCard from '../components/MusicCard';
 
 class Favorites extends Component {
   render() {
@@ -7,6 +8,7 @@ class Favorites extends Component {
       <>
         <div data-testid="page-favorites" />
         <Header />
+        <MusicCard />
       </>
 
     );
