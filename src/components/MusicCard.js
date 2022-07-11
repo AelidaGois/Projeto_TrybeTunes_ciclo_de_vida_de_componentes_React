@@ -10,7 +10,6 @@ class MusicCard extends Component {
 
   saveFavoritesMusics = async () => {
     const { music } = this.props;
-    console.log(music);
     await addSong(music);
   }
 
@@ -23,6 +22,16 @@ class MusicCard extends Component {
       carregando: false,
     });
   }
+
+  // getFavorites = async () => {
+  //   this.setState({
+  //     carregando: true,
+  //   });
+  //   await this.getFavoriteSongs();
+  //   this.setState({
+  //     carregando: false,
+  //   });
+  // }
 
   render() {
     const { music } = this.props;
